@@ -1,0 +1,14 @@
+pandas
+pandas_datareader
+matplotlib
+numpy
+scikit-learn
+beautifulsoup4
+datetime
+os
+mplfinance
+pandas
+pandas_datareader.data
+icecream
+matplotlib
+numpy
