@@ -71,8 +71,12 @@ def get_data_from_nsedata(reload_tickerList=False):
 
     if not os.path.exists('stock_dfs'):
         os.makedirs('stock_dfs')
-    start = dt.date(2000, 1, 1).strftime('(%Y, %m, %d)')
-    end = dt.datetime.strptime(dt.datetime.now(), '(%Y, %m, %d)')
+
+    start_date_str = dt.datetime(2000, 1, 1).strftime('%Y, %m, %d')
+    end_date_str = dt.datetime.strftime(dt.datetime.now(), '%Y, %m, %d')
+
+    start = tuple(map(int, start_date_str.split(', ')))
+    end = tuple(map(int, end_date_str.split(', ')))
 
     for ticker in tickers:
         if not os.path.exists(f'stock_dfs/{ticker}.csv'):
