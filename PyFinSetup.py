@@ -13,7 +13,7 @@ NSE_urlList = {
     'ind_nifty200list.csv': 'https://www1.nseindia.com/content/indices/ind_nifty200list.csv',
     'ind_nifty100list.csv': 'https://www1.nseindia.com/content/indices/ind_nifty100list.csv',
     'ind_nifty50list.csv': 'https://www1.nseindia.com/content/indices/ind_nifty50list.csv'
-    }
+}
 
 
 def save_nse_tickers(n: int = 50):
@@ -31,7 +31,8 @@ def save_nse_tickers(n: int = 50):
 
     def check(n):
         if not(n in [50, 100, 200, 500]):
-            raise ValueError("Sorry. 'n' must be in the list[50, 100, 200, 500]")
+            raise ValueError(
+                "Sorry. 'n' must be in the list[50, 100, 200, 500]")
 
     fileName = f'ind_nifty{n}list.csv'
     os.chdir('./NSE_Lists/')
